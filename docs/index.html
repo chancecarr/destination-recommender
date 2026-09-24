@@ -1,0 +1,13 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Database Design: Destination Recommender</title>
+    <link href="/destination-recommender/index.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <article><div><h1>Database Design: Destination Recommender</h1><p><a href="/destination-recommender/..">< Back Home</a></p><h6><a href="https://github.com/chancecarr/destination-recommender">See the code</a></h6><h3>Explanation</h3><p>This project served two purposes: first, to showcase what I learned in my Database Modeling Concepts class; second, to experiment with letting AI generate a frontend for me. There were a couple of complex pieces that I worked through:</p><h4>Database Prep</h4><ol><li>I found and cleaned a database of all of the sites in the U.S. under the care of the federal government as listed by the National Parks Service. </li><li>I designed my own database which included this cleaned information as well as an image of each site scraped from Google Maps and geolocation data provided by the Google Maps API. </li><li>I also wrote a script that queried Chat-GPT 4-o mini and had it write a short description of each site, and I included those descriptions in my dataset. </li><li>As a final piece of data, I used SentenceTransformer to generate a vector embedding of the site description for later use.</li></ol><h4>Backend Utility</h4><ol><li>For the core utility of the project, I created a vector-based natural language search engine. This meant that a user could type in a search for any sort of place they wanted to visit, my system would use the same SentenceTransformer model I used to encode my sites database to encode their query, and then it would find the most similar destination to what they requested based upon the cosine similarity of the embedded vectors and return it. </li><li>For fun, I gave users the ability to submit their own destinations to my database. Submitted sites would get their own picture scraped from Google Maps, geolocation data, a new description written by Chat-GPT 4-o mini, and vector embedding. These sites would be included in the database in future searches.</li></ol><p>Finally, I utilized Cursor to create a simple frontend for my sites list and search engine. This project was a lot of fun!</p><p>(See my final dataset <a href="/destination-recommender/documents/destinations-db.csv">here</a>. Note that the last few rows were user-submitted!)</p></div></article>
+  </body>
+</html>
