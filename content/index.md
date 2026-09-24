@@ -22,4 +22,4 @@ This project served two purposes: first, to showcase what I learned in my Databa
 
 Finally, I utilized Cursor to create a simple frontend for my sites list and search engine. This project was a lot of fun!
 
-(**See my final dataset [here](/documents/destinations-db.csv).** Note that the last few rows were user-submitted!)
+###### (See my final dataset [here](/documents/destinations-db.csv). Note that the last few rows were user-submitted!)
